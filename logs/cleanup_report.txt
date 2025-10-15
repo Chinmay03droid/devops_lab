@@ -1,0 +1,3 @@
+Cleanup started...
+Deleted: test1.log
+Deleted: test2.tmp

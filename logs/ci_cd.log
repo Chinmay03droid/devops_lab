@@ -1,0 +1,14 @@
+🚀 Starting CI/CD pipeline at Fri Oct 17 07:44:28 UTC 2025
+📦 Detected changes. Running pipeline...
+🧪 Running tests...
+/home/asus/devops_lab/src/app.py:1: SyntaxWarning: invalid escape sequence '\!'
+  print("Hello Devops\!")
+Hello Devops\!
+✅ Tests passed!
+🚚 Deploying to staging...
+sending incremental file list
+./
+app.py
+
+sent 148 bytes  received 38 bytes  372.00 bytes/sec
+total size is 24  speedup is 0.13

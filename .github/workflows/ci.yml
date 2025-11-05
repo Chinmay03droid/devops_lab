@@ -1,41 +1,29 @@
 name: DevOps Log Generator CI
 
 on:
-  
   push:
-    
-    branches: ["main"]
-  
+    branches:
+      - main
   pull_request:
-    
-    branches: ["main"]
- jobs:
-   
-   build:
-      
-      runs-on: ubuntu-latest
+    branches:
+      - main
 
+jobs:
+  run-log-generator:
+    runs-on: ubuntu-latest
 
-  steps:
-    
-    - name: Checkout repository
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
 
-    - name: Set up Python
+      - name: Run Log Generator Script
+        run: |
+          echo "Running log generator..."
+          chmod +x log_generator.sh
+          ./log_generator.sh
 
-      uses: actions/setup-python@v5
-
-      with:
-
-     python-version: "3.x"
- 
-    - name: Run Log Generator Script
-
-      run: |
-
-       echo "Running log generator..."
-
-       chmod +x log_generator.sh
-     
-       ./log_generator.sh

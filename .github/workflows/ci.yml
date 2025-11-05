@@ -1,0 +1,27 @@
+name: DevOps Log Generator CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Log Generator Script
+        run: |
+          echo "Running log generator..."
+          chmod +x logs/generator.sh
+          bash logs/generator.sh
+          echo "✅ Log generation complete!"
+
+      - name: Display generated logs
+        run: |
+          echo "📜 Showing last 10 lines of log file:"
+          tail -n 10 logs/old_log.txt || echo "No log file found"

@@ -47,9 +47,9 @@
 
   * ⚙️ Bash Scripting
 
-  * 🚀 CI/CD (to be added soon)
+  * 🚀 CI/CD 
 
-  * 🐳 Docker (planned)
+  * 🐳 Docker 
 
 
   🧭 Learning Goals
